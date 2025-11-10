@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app_financeair',
+    'rest_framework',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -77,8 +79,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'financeairdb',
-        'USER': 'postgres',
-        'PASSWORD': 122989,
+        'USER': 'DB_USER',
+        'PASSWORD': 'DB_PASSWORD',
         'HOST': 'localhost',
     }
 }
@@ -101,6 +103,15 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+REST_FRAMEWORK = {
+  'DEFAULT_AUTHENTICATION_CLASSES': (
+    'rest_framework_simplejwt.authentication.JWTAuthentication',
+  ),
+  'DEFAULT_PERMISSION_CLASSES': (
+    'rest_framework.permissions.IsAuthenticated',
+  ),
+}
 
 
 # Internationalization
