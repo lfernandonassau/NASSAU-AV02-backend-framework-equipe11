@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Conta, Categoria, TipoTransacao, Transacao, MetaFinanceira, DespesaFixa, FonteRenda
+from models import Conta, Categoria, TipoTransacao, Transacao, MetaFinanceira, DespesaFixa, FonteRenda
 from django.contrib.auth.models import User
 
 class UserSerializer(serializers.ModelSerializer):
