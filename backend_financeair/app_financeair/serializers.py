@@ -1,7 +1,14 @@
 from rest_framework import serializers
-from models import Conta, Categoria, TipoTransacao, Transacao, MetaFinanceira, DespesaFixa, FonteRenda
+from .models import Conta, Categoria, TipoTransacao, Transacao, MetaFinanceira, DespesaFixa, FonteRenda
 from django.contrib.auth.models import User
 
+class RegisterSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True, min_length=6)
+    class Meta:
+        model = User
+        fields = ('id','username','email','password')
+    def create(self, validated):
+        return User.objects.create_user(username=validated['username'], email=validated.get('email',''), password=validated['password'])
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User

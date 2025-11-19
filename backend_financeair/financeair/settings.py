@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,7 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',   
     'app_financeair',
     'rest_framework',
+<<<<<<< HEAD
     
+=======
+    'rest_framework.authtoken',
+    'django_extensions',
+>>>>>>> e1ba7a369c84d5867e3f06b2693de0ed62af931f
 ]
 
 MIDDLEWARE = [
@@ -125,6 +131,11 @@ REST_FRAMEWORK = {
   'DEFAULT_PERMISSION_CLASSES': (
     'rest_framework.permissions.IsAuthenticated',
   ),
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
 }
 
 
