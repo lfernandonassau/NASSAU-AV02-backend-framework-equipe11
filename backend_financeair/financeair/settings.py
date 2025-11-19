@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',   
     'app_financeair',
     'rest_framework',
-    'core',
+    
 ]
 
 MIDDLEWARE = [
