@@ -41,12 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',   
     'app_financeair',
     'rest_framework',
-<<<<<<< HEAD
     
-=======
-    'rest_framework.authtoken',
-    'django_extensions',
->>>>>>> e1ba7a369c84d5867e3f06b2693de0ed62af931f
 ]
 
 MIDDLEWARE = [

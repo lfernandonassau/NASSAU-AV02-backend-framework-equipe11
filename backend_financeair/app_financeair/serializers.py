@@ -36,7 +36,6 @@ class TipoTransacaoSerializer(serializers.ModelSerializer):
         fields = ['id', 'nome']
 
 
-
 class TransacaoSerializer(serializers.ModelSerializer):
     conta = serializers.PrimaryKeyRelatedField(queryset=Conta.objects.all())
     categoria = serializers.PrimaryKeyRelatedField(queryset=Categoria.objects.all())
@@ -55,14 +54,12 @@ class TransacaoSerializer(serializers.ModelSerializer):
         ]
 
 
-
 class MetaFinanceiraSerializer(serializers.ModelSerializer):
     usuario = UserSerializer(read_only=True)
 
     class Meta:
         model = MetaFinanceira
         fields = ['id', 'nome', 'valor_objetivo', 'usuario']
-
 
 
 class DespesaFixaSerializer(serializers.ModelSerializer):
